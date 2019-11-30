@@ -458,7 +458,7 @@ int main(){
 
 
     int coarse_data[strength_Matrix_row][strength_Matrix_col]= {{3,5,5,5,3},{5,8,8,8,5},
-                                       {5,8,8,8,5},{5,8,8,8,5},{3,5,5,5,3}};
+                                                                {5,8,8,8,5},{5,8,8,8,5},{3,5,5,5,3}};
 
     // int data[Matrix_row][Matrix_col]= {{3,3,3,3,3},{5,5,5,5,5},
     // {5,5,5,5,5},{5,5,5,5,5},{3,3,3,3,3}};
@@ -489,7 +489,7 @@ int main(){
 
     printf("\n*******smmoth*********\n");
     double smooth_data[smooth_Matrix_row][smooth_Matrix_col]= {{10,-1,2,0},{-1,11,-1,3},
-                                                            {2,-1,10,-1},{0,3,-1,8}};
+                                                               {2,-1,10,-1},{0,3,-1,8}};
     double RHS_data[smooth_Matrix_row] = {6,25,-11,15};
     class smooth_matrix smooth_matrix(smooth_Matrix_row,smooth_Matrix_col);
     smooth_matrix.input_data(smooth_data,RHS_data);
@@ -509,4 +509,16 @@ int main(){
     spmv.input_data(SPMV_A,SPMV_v);
     double result[smooth_Matrix_row];
     spmv.SPMV(result);
+
+
+    //vcycle(downside):
+    for(int i = 0; i < level; ++i){
+        //smooth -> coarse
+        printf("%d\n",i);
+    }
+    //vcycle(upside):
+    for(int i = level-1; i >= 0; --i){
+        printf("%d\n",i);
+    }
+
 }
