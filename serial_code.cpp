@@ -4,6 +4,8 @@
 #include<cmath>
 using namespace std;
 
+#define level 3
+
 #define strength_Matrix_row 5
 #define strength_Matrix_col 5
 
